@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "client build",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -12,71 +12,150 @@
                 "command": "powershell",
                 "args": [
                     "-c",
-                    "mingw32-make"
+                    "cd Client; mingw32-make"
                 ]
             },
             "linux": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "make"
+                    "cd Client && make"
                 ]
             },
             "osx": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "make"
+                    "cd Client && make"
                 ]
             }
         },
         {
-            "label": "build & run",
+            "label": "client build & run",
             "type": "shell",
             "windows": {
                 "command": "powershell",
                 "args": [
                     "-c",
-                    "'mingw32-make run'"
+                    "cd Client; mingw32-make run"
                 ]
             },
             "linux": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "'make run'"
+                    "cd Client && make run"
                 ]
             },
             "osx": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "'make run'"
+                    "cd Client && make run"
                 ]
             }
         },
         {
-            "label": "clean",
+            "label": "client clean",
             "type": "shell",
             "windows": {
                 "command": "powershell",
                 "args": [
                     "-c",
-                    "'mingw32-make clean'"
+                    "cd Client; mingw32-make clean"
                 ]
             },
             "linux": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "'make clean'"
+                    "cd Client && make clean"
                 ]
             },
             "osx": {
                 "command": "bash",
                 "args": [
                     "-c",
-                    "'make clean'"
+                    "cd Client && make clean"
+                ]
+            }
+        },
+        {
+            "label": "server build",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-c",
+                    "cd Server; mingw32-make"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make"
+                ]
+            },
+            "osx": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make"
+                ]
+            }
+        },
+        {
+            "label": "server build & run",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-c",
+                    "cd Server; mingw32-make run"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make run"
+                ]
+            },
+            "osx": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make run"
+                ]
+            }
+        },
+        {
+            "label": "server clean",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-c",
+                    "cd Server; mingw32-make clean"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make clean"
+                ]
+            },
+            "osx": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "cd Server && make clean"
                 ]
             }
         }

@@ -2,30 +2,56 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug",
+            "name": "DebugClient",
             "type": "cppdbg",
             "request": "launch",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/Client",
             "environment": [],
             "externalConsole": false,
             "linux": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb",
-                "program": "${workspaceFolder}/output/main"
+                "program": "${workspaceFolder}/Client/output/main"
             },
             "osx": {
                 "MIMode": "lldb",
                 "miDebuggerPath": "lldb-mi",
-                "program": "${workspaceFolder}/output/main"
+                "program": "${workspaceFolder}/Client/output/main"
             },
             "windows": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
-                "program": "${workspaceFolder}/output/main.exe"
+                "program": "${workspaceFolder}/Client/output/main.exe"
             },
-            "preLaunchTask": "build"
+            "preLaunchTask": "client build"
+        },
+        {
+            "name": "DebugServer",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Server",
+            "environment": [],
+            "externalConsole": false,
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "program": "${workspaceFolder}/Server/output/main"
+            },
+            "osx": {
+                "MIMode": "lldb",
+                "miDebuggerPath": "lldb-mi",
+                "program": "${workspaceFolder}/Server/output/main"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb.exe",
+                "program": "${workspaceFolder}/Server/output/main.exe"
+            },
+            "preLaunchTask": "server build"
         }
     ]
 }
